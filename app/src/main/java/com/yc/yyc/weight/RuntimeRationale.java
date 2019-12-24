@@ -40,18 +40,8 @@ public final class RuntimeRationale implements Rationale<List<String>> {
                 .setCancelable(false)
                 .setTitle(R.string.app_name)
                 .setMessage(message)
-                .setPositiveButton(R.string.resume, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        executor.execute();
-                    }
-                })
-                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        executor.cancel();
-                    }
-                })
+                .setPositiveButton(R.string.resume, (dialog, which) -> executor.execute())
+                .setNegativeButton(R.string.cancel, (dialog, which) -> executor.cancel())
                 .show();
     }
 }

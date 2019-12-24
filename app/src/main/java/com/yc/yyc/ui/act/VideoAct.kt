@@ -27,7 +27,7 @@ class VideoAct :  GSYBaseActivityDetail<ListGSYVideoPlayer>() {
     override fun getLayoutId(): Int = R.layout.a_video
 
     override fun initParms(bundle: Bundle) {
-        videoUrl = bundle.getString("video")
+        videoUrl = bundle.getString("video")//视频 + 封面图
         iamgeUrl = bundle.getString("image")
     }
 

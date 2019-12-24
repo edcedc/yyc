@@ -118,8 +118,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-
-
+    //腾讯X5
+    api 'com.tencent.tbs.tbssdk:sdk:43697'
     // 网络请求库
     implementation rootProject.ext.networkLibs
     // RxJava2

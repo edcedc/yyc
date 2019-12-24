@@ -32,7 +32,7 @@ class MainFrg : BaseFragment(){
 
     override fun initView(rootView: View) {
         bottomBar
-            .addItem(BottomBarTab(_mActivity, R.mipmap.ic_launcher, "圈子"))
+            .addItem(BottomBarTab(_mActivity, R.mipmap.ic_launcher, "测试"))
             .addItem(BottomBarTab(_mActivity, R.mipmap.ic_launcher, "关注"))
             .addItem(BottomBarTab(_mActivity, R.mipmap.ic_launcher, "我的"))
         bottomBar.setOnTabSelectedListener(object : BottomBar.OnTabSelectedListener {

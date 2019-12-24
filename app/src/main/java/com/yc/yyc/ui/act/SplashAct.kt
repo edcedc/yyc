@@ -1,6 +1,7 @@
 package com.yc.yyc.ui.act
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
@@ -27,12 +28,12 @@ import com.yc.yyc.weight.RuntimeRationale
  * Date: 2019/9/22
  * Time: 18:11
  */
-class SplashAct : BaseActivity(), LoginContract.View{
+class SplashAct : BaseActivity(), LoginContract.View {
 
 
-     val mPresenter by lazy { LoginPresenter() }
+    val mPresenter by lazy { LoginPresenter() }
 
-    var REQUEST_CODE_SETTING : Int = 1
+    var REQUEST_CODE_SETTING: Int = 1
 
     val mHandle_splash = 0
     val mHandle_permission = 1
@@ -47,7 +48,7 @@ class SplashAct : BaseActivity(), LoginContract.View{
         handler?.sendEmptyMessageDelayed(mHandle_permission, 1000)
     }
 
-    private var handler: Handler? = object : Handler() {
+    var handler: Handler? = object : Handler() {
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
             when (msg.what) {
@@ -68,7 +69,7 @@ class SplashAct : BaseActivity(), LoginContract.View{
     /**
      * 设置权限
      */
-    private fun setHasPermission() {
+    fun setHasPermission() {
         AndPermission.with(this)
             .runtime()
             .permission(
@@ -88,6 +89,7 @@ class SplashAct : BaseActivity(), LoginContract.View{
             .start()
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         when (requestCode) {
             REQUEST_CODE_SETTING -> {
@@ -118,7 +120,7 @@ class SplashAct : BaseActivity(), LoginContract.View{
     /**
      * Set permissions.
      */
-    private fun setPermission() {
+    fun setPermission() {
         AndPermission.with(this)
             .runtime()
             .setting()
@@ -128,14 +130,16 @@ class SplashAct : BaseActivity(), LoginContract.View{
     /**
      * 权限有任何一个失败都会走的方法
      */
-    private fun setPermissionCancel() {
-        act?.finish()
+    fun setPermissionCancel() {
+//        act?.finish()
+        setHasPermission()
+        showToast("请给需要的权限，以免出现异常")
     }
 
     /**
      * 权限都成功
      */
-    private fun setPermissionOk() {
+    fun setPermissionOk() {
         val account = SharedAccount.getInstance(act)
         val mobile = account.getMobile()
         val pwd = account.getPwd()
@@ -152,7 +156,7 @@ class SplashAct : BaseActivity(), LoginContract.View{
         startNext()
     }
 
-    private fun startNext() {
+    fun startNext() {
         UIHelper.startMainAct()
         ActivityUtils.finishAllActivities()
     }

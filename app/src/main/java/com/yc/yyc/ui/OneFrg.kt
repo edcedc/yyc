@@ -26,7 +26,10 @@ class OneFrg: BaseFragment(), OneContract.View{
 
     override fun initView(rootView: View) {
         mPresenter.init(this)
-        bt_play.setOnClickListener { UIHelper.startVideoAct("https://memashejiao.oss-cn-shenzhen.aliyuncs.com/4dea6b53fe7c784f2049542c6d151869.mp4", "https://memashejiao.oss-cn-shenzhen.aliyuncs.com/4dea6b53fe7c784f2049542c6d151869.mp4") }
+        bt_play.setOnClickListener {
+//            UIHelper.startVideoAct("https://memashejiao.oss-cn-shenzhen.aliyuncs.com/4dea6b53fe7c784f2049542c6d151869.mp4", "https://memashejiao.oss-cn-shenzhen.aliyuncs.com/4dea6b53fe7c784f2049542c6d151869.mp4")
+            UIHelper.startHtmlAct(2, "https://www.chaokukj.cn/label/front.html")
+        }
         btn_commit.setOnClickListener { mPresenter.onRequest(1) }
     }
 

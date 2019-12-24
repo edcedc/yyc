@@ -19,7 +19,6 @@
     <!--如果是安卓8.0，应用编译配置的targetSdkVersion>=26，请务必添加以下权限 -->
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
-
     <application
             android:name="com.yc.yyc.mar.MyApplication"
             android:networkSecurityConfig="@xml/network_security_config"

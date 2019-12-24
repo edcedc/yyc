@@ -2,11 +2,11 @@ package com.yc.yyc.ui.act
 
 import android.os.Bundle
 import android.view.View
-import android.webkit.WebChromeClient
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
+import com.tencent.smtt.sdk.WebChromeClient
+import com.tencent.smtt.sdk.WebView
+import com.tencent.smtt.sdk.WebViewClient
 import com.yc.yyc.R
 import com.yc.yyc.base.BaseActivity
 import com.yc.yyc.mvp.impl.HtmlContract

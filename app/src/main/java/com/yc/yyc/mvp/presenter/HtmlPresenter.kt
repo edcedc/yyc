@@ -25,23 +25,23 @@ class HtmlPresenter  : BasePresenter<HtmlContract.View>(), HtmlContract.Presente
     }
 
     fun informationAgreement(){
-        var disposable = RetrofitManager.service.informationAgreement()
-            .compose(SchedulerUtils.ioToMain())
-            .subscribe({ bean ->
-                mRootView?.apply {
-                    if (bean.code == ErrorStatus.SUCCESS){
-                        val data = bean.data
-                        mRootView?.setUrl(data?.title, data?.content)
-                    }
-                }
-            }, { t ->
-                mRootView?.apply {
-                    //处理异常
-                    mRootView?.errorText(ExceptionHandle.handleException(t), ExceptionHandle.errorCode)
-                }
-            })
-
-        addSubscription(disposable)
+//        var disposable = RetrofitManager.service.informationAgreement()
+//            .compose(SchedulerUtils.ioToMain())
+//            .subscribe({ bean ->
+//                mRootView?.apply {
+//                    if (bean.code == ErrorStatus.SUCCESS){
+//                        val data = bean.data
+//                        mRootView?.setUrl(data?.title, data?.content)
+//                    }
+//                }
+//            }, { t ->
+//                mRootView?.apply {
+//                    //处理异常
+//                    mRootView?.errorText(ExceptionHandle.handleException(t), ExceptionHandle.errorCode)
+//                }
+//            })
+//
+//        addSubscription(disposable)
     }
 
 }

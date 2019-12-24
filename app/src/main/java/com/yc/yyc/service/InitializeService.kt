@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.Utils
+import com.tencent.smtt.sdk.QbSdk
 import me.jessyan.autosize.AutoSize
 import me.jessyan.autosize.AutoSizeConfig
 import me.jessyan.autosize.onAdaptListener
@@ -40,12 +41,30 @@ class InitializeService : IntentService("InitializeService") {
     private fun performInit() {
         Utils.init(this)
         LogUtils.e("performInit begin:" + System.currentTimeMillis())
-//        initAutoSizeConfig()
+        initAutoSizeConfig()
+        initQbSdk()
 //        initShare()
         //        LogUtils.getConfig().setLogSwitch(false);
         // 设置崩溃后自动重启 APP
         //        UncaughtExceptionHandlerImpl.getInstance().init(this, BuildConfig.DEBUG, true, 0, MainActivity.class);
         LogUtils.e("performInit end:" + System.currentTimeMillis())
+    }
+
+    private fun initQbSdk() {
+        val cb = object : QbSdk.PreInitCallback {
+
+            override fun onViewInitFinished(arg0: Boolean) {
+                // TODO Auto-generated method stub
+                //x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
+                LogUtils.e("app", " onViewInitFinished is $arg0")
+            }
+
+            override fun onCoreInitFinished() {
+                // TODO Auto-generated method stub
+            }
+        }
+        //x5内核初始化接口
+        QbSdk.initX5Environment(applicationContext, cb)
     }
 
     private fun initShare() {

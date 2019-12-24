@@ -27,24 +27,24 @@ class RegisterPresenter : BasePresenter<RegisterContract.View>(), RegisterContra
             return
         }
         mRootView?.showLoading()
-        var disposable = RetrofitManager.service.userGetRegisterCode(phone)
-            .compose(SchedulerUtils.ioToMain())
-            .subscribe({ bean ->
-                mRootView?.apply {
-                    mRootView?.hideLoading()
-                    if (bean.code == ErrorStatus.SUCCESS){
-                        mRootView?.setCode()
-                    }
-                    showToast(bean.desc as String)
-                }
-            }, { t ->
-                mRootView?.apply {
-                    //处理异常
-                    mRootView?.errorText(ExceptionHandle.handleException(t), ExceptionHandle.errorCode)
-                }
-            })
-
-        addSubscription(disposable)
+//        var disposable = RetrofitManager.service.userGetRegisterCode(phone)
+//            .compose(SchedulerUtils.ioToMain())
+//            .subscribe({ bean ->
+//                mRootView?.apply {
+//                    mRootView?.hideLoading()
+//                    if (bean.code == ErrorStatus.SUCCESS){
+//                        mRootView?.setCode()
+//                    }
+//                    showToast(bean.desc as String)
+//                }
+//            }, { t ->
+//                mRootView?.apply {
+//                    //处理异常
+//                    mRootView?.errorText(ExceptionHandle.handleException(t), ExceptionHandle.errorCode)
+//                }
+//            })
+//
+//        addSubscription(disposable)
     }
 
     override fun onSure(phone: String, code: String, pwd: String, pwd1: String, checked: Boolean?) {
