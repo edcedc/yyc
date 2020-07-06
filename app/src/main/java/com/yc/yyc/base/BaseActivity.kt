@@ -34,13 +34,10 @@ import me.yokeyword.fragmentation_swipeback.SwipeBackActivity
  */
 abstract class BaseActivity : SwipeBackActivity() {
 
-    protected lateinit var act: Activity
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(getLayoutId())
-        act = this
         // 初始化参数
         var bundle = intent.extras
         if (bundle == null) {
@@ -68,7 +65,7 @@ abstract class BaseActivity : SwipeBackActivity() {
     abstract fun initParms(bundle: Bundle)
 
     protected fun showToast(str: String) {
-        act.runOnUiThread {
+        runOnUiThread {
             ToastUtils.showShort(str)
         }
     }
@@ -95,7 +92,7 @@ abstract class BaseActivity : SwipeBackActivity() {
 
     private fun setTitle(isBack : Boolean, title : String, rightTitle : String?, rightImg : Int){
         setSofia(false)
-        val mAppCompatActivity = act as AppCompatActivity
+        val mAppCompatActivity = this as AppCompatActivity
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         val topTitle = findViewById<AppCompatTextView>(R.id.top_title)
         val topRightFy = findViewById<FrameLayout>(R.id.top_right_fy)
@@ -104,7 +101,7 @@ abstract class BaseActivity : SwipeBackActivity() {
         mAppCompatActivity.setSupportActionBar(toolbar)
         mAppCompatActivity.supportActionBar?.setTitle("")
         if (isBack) {
-            toolbar?.setNavigationOnClickListener { act?.onBackPressed() }
+            toolbar?.setNavigationOnClickListener { onBackPressed() }
         } else {
             toolbar?.navigationIcon = null
         }
@@ -131,7 +128,7 @@ abstract class BaseActivity : SwipeBackActivity() {
     protected fun setSofia(isFullScreen: Boolean) {
         if (!isFullScreen) {
             val toolbar = findViewById<Toolbar>(R.id.toolbar)
-            ImmersionBar.with(this).statusBarColor(R.color.red_FF5A60).titleBar(toolbar).statusBarDarkFont(false).init()
+            ImmersionBar.with(this).statusBarColor(R.color.white).titleBar(toolbar).statusBarDarkFont(true).init()
         } else {
             ImmersionBar.with(this).transparentBar().statusBarDarkFont(false).init()
         }
@@ -161,7 +158,7 @@ abstract class BaseActivity : SwipeBackActivity() {
             when (msg.what) {
                 handler_load -> {
                     if (dialog != null && dialog!!.isShowing()) return
-                    dialog = ProgressDialog(act)
+                    dialog = ProgressDialog(this@BaseActivity)
                     dialog!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
                     dialog!!.setCanceledOnTouchOutside(false)
                     dialog!!.setProgressStyle(ProgressDialog.STYLE_SPINNER)

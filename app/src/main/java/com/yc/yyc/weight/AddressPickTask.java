@@ -1,3 +1,4 @@
+/*
 package com.yc.yyc.weight;
 
 import android.app.Activity;
@@ -13,11 +14,13 @@ import com.alibaba.fastjson.JSON;
 import java.util.ArrayList;
 
 
+*/
 /**
  * 获取地址数据并显示地址选择器
  * @author matt
  * blog: addapp.cn
- */
+ *//*
+
 public class AddressPickTask extends AsyncTask<String, Void, ArrayList<Province>> {
     private Activity activity;
     private ProgressDialog dialog;
@@ -110,3 +113,4 @@ public class AddressPickTask extends AsyncTask<String, Void, ArrayList<Province>
     }
 
 }
+*/

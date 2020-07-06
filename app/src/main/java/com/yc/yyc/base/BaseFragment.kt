@@ -41,8 +41,6 @@ abstract class BaseFragment: SwipeBackFragment(){
      */
     internal var mLayoutStatusView: MultipleStatusView? = null
 
-    internal var act: Activity? = null
-
      var rootView: View? = null
 
     protected var pagerNumber = 1//网络请求默认第一页
@@ -63,12 +61,6 @@ abstract class BaseFragment: SwipeBackFragment(){
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         this.rootView?.let { initView(it) }
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        LogUtils.d("onCreate")
-        act = activity
     }
 
     /**
@@ -93,7 +85,7 @@ abstract class BaseFragment: SwipeBackFragment(){
     }
 
     protected fun showToast(str: String) {
-        act?.runOnUiThread {
+        activity?.runOnUiThread {
             ToastUtils.showShort(str)
         }
     }
@@ -115,7 +107,7 @@ abstract class BaseFragment: SwipeBackFragment(){
 
     private fun setTitle(isBack : Boolean, title : String, rightTitle : String?, rightImg : Int){
         setSofia(false)
-        val mAppCompatActivity = act as AppCompatActivity
+        val mAppCompatActivity = activity as AppCompatActivity
         val toolbar = rootView?.findViewById<Toolbar>(R.id.toolbar)
         val topTitle = rootView?.findViewById<AppCompatTextView>(R.id.top_title)
         val topRightFy = rootView?.findViewById<FrameLayout>(R.id.top_right_fy)
@@ -124,7 +116,7 @@ abstract class BaseFragment: SwipeBackFragment(){
         mAppCompatActivity.setSupportActionBar(toolbar)
         mAppCompatActivity.supportActionBar?.setTitle("")
         if (isBack) {
-            toolbar?.setNavigationOnClickListener { act?.onBackPressed() }
+            toolbar?.setNavigationOnClickListener { activity?.onBackPressed() }
         } else {
             toolbar?.navigationIcon = null
         }
@@ -186,7 +178,7 @@ abstract class BaseFragment: SwipeBackFragment(){
             when (msg.what) {
                 handler_load -> {
                     if (dialog != null && dialog!!.isShowing()) return
-                    dialog = ProgressDialog(act)
+                    dialog = ProgressDialog(activity)
                     dialog!!.requestWindowFeature(Window.FEATURE_NO_TITLE)
                     dialog!!.setCanceledOnTouchOutside(false)
                     dialog!!.setProgressStyle(ProgressDialog.STYLE_SPINNER)
@@ -211,14 +203,14 @@ abstract class BaseFragment: SwipeBackFragment(){
     }
 
     protected fun setRecyclerViewType(recyclerView: RecyclerView) {
-        recyclerView.setLayoutManager(LinearLayoutManager(act))
+        recyclerView.setLayoutManager(LinearLayoutManager(activity))
         setRecyclerView(recyclerView)
     }
 
     protected fun setRecyclerViewType(recyclerView: RecyclerView, baColor: Int) {
-        recyclerView.layoutManager = LinearLayoutManager(act)
+        recyclerView.layoutManager = LinearLayoutManager(activity)
         setRecyclerView(recyclerView)
-        act?.let { ContextCompat.getColor(it, baColor) }?.let { recyclerView.setBackgroundColor(it) }
+        activity?.let { ContextCompat.getColor(it, baColor) }?.let { recyclerView.setBackgroundColor(it) }
     }
 
     private fun setRecyclerView(recyclerView: RecyclerView) {

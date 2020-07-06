@@ -1,3 +1,4 @@
+/*
 package com.yc.yyc.utils;
 
 import android.app.Activity;
@@ -20,12 +21,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+*/
 /**
  * Created by Android Studio.
  * User: ${edison}
  * Date: 2019/7/24
  * Time: 11:17
- */
+ *//*
+
 public class DatePickerUtils {
 
 
@@ -173,3 +176,4 @@ public class DatePickerUtils {
     }
 
 }
+*/

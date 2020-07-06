@@ -59,7 +59,7 @@ class UIHelper private constructor() {
             var bundle = Bundle()
             bundle.putString("video", video)
             bundle.putString("image", image)
-            ActivityUtils.startActivity(bundle, VideoAct::class.java)
+//            ActivityUtils.startActivity(bundle, VideoAct::class.java)
         }
 
     }

@@ -1,3 +1,4 @@
+/*
 package com.yc.yyc.weight
 
 import android.content.res.Configuration
@@ -9,10 +10,12 @@ import com.shuyu.gsyvideoplayer.utils.OrientationUtils
 import com.shuyu.gsyvideoplayer.video.base.GSYBaseVideoPlayer
 import com.yc.yyc.base.BaseActivity
 
+*/
 /**
  * 详情模式播放页面基础类
  * Created by guoshuyu on 2017/9/14.
- */
+ *//*
+
 abstract class GSYBaseActivityDetail<T : GSYBaseVideoPlayer> : BaseActivity(), VideoAllCallBack {
 
     protected var isPlay: Boolean = false
@@ -21,24 +24,32 @@ abstract class GSYBaseActivityDetail<T : GSYBaseVideoPlayer> : BaseActivity(), V
 
     protected var orientationUtils: OrientationUtils? = null
 
-    /**
+    */
+/**
      * 播放控件
-     */
+     *//*
+
     abstract val gsyVideoPlayer: T
 
-    /**
+    */
+/**
      * 配置播放器
-     */
+     *//*
+
     abstract val gsyVideoOptionBuilder: GSYVideoOptionBuilder
 
-    /**
+    */
+/**
      * 是否启动旋转横屏，true表示启动
-     */
+     *//*
+
     abstract val detailOrientationRotateAuto: Boolean
 
-    /**
+    */
+/**
      * 是否根据视频尺寸，自动选择竖屏全屏或者横屏全屏，注意，这时候默认旋转无效
-     */
+     *//*
+
     val isAutoFullWithSize: Boolean
         get() = false
 
@@ -47,9 +58,11 @@ abstract class GSYBaseActivityDetail<T : GSYBaseVideoPlayer> : BaseActivity(), V
 
     }
 
-    /**
+    */
+/**
      * 选择普通模式
-     */
+     *//*
+
     fun initVideo() {
         //外部辅助的旋转，帮助全屏
         orientationUtils = OrientationUtils(this, gsyVideoPlayer)
@@ -63,9 +76,11 @@ abstract class GSYBaseActivityDetail<T : GSYBaseVideoPlayer> : BaseActivity(), V
         }
     }
 
-    /**
+    */
+/**
      * 选择builder模式
-     */
+     *//*
+
     fun initVideoBuilderMode() {
         initVideo()
         gsyVideoOptionBuilder.setVideoAllCallBack(this)
@@ -237,8 +252,11 @@ abstract class GSYBaseActivityDetail<T : GSYBaseVideoPlayer> : BaseActivity(), V
         return true
     }
 
-    /**
+    */
+/**
      * 点击了全屏
-     */
+     *//*
+
     abstract fun clickForFullScreen()
 }
+*/

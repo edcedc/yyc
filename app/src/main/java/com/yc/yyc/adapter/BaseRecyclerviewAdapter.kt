@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.blankj.utilcode.util.ToastUtils
-import com.yc.yyc.adapter.base.ViewHolder
+import com.yc.bsqkl.adapter.base.ViewHolder
 
 
 abstract class BaseRecyclerviewAdapter<T>(var act: Context, var listBean: ArrayList<T>) : RecyclerView.Adapter<ViewHolder>() {

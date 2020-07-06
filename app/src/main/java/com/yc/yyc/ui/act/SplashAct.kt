@@ -140,7 +140,7 @@ class SplashAct : BaseActivity(), LoginContract.View {
      * 权限都成功
      */
     fun setPermissionOk() {
-        val account = SharedAccount.getInstance(act)
+        val account = SharedAccount.getInstance(this)
         val mobile = account.getMobile()
         val pwd = account.getPwd()
 //        if (!StringUtils.isEmpty(mobile) && !StringUtils.isEmpty(pwd)) {
@@ -157,7 +157,7 @@ class SplashAct : BaseActivity(), LoginContract.View {
     }
 
     fun startNext() {
-        UIHelper.startMainAct()
+        ActivityUtils.startActivity(CeShiAct::class.java)
         ActivityUtils.finishAllActivities()
     }
 
@@ -168,7 +168,7 @@ class SplashAct : BaseActivity(), LoginContract.View {
 
     override fun setError() {
         startNext()
-        SharedAccount.getInstance(act).remove()
+        SharedAccount.getInstance(this).remove()
     }
 
 }

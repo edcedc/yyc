@@ -1,5 +1,6 @@
 package com.yc.yyc.ui.act
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.View
 import com.blankj.utilcode.util.LogUtils

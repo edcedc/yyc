@@ -174,17 +174,17 @@ dependencies {
     // 权限
     implementation 'com.yanzhenjie.permission:x:2.0.1'
     //选中时间控件
-    implementation 'com.github.addappcn:android-pickers:1.0.3'
+//    implementation 'com.github.addappcn:android-pickers:1.0.3'
     //跟上面一起选择地址要
-    implementation 'com.alibaba:fastjson:1.1.56.android'
+//    implementation 'com.alibaba:fastjson:1.1.56.android'
     //视频完整版引入
-    implementation 'com.shuyu:gsyVideoPlayer-java:7.1.1'
+//    implementation 'com.shuyu:gsyVideoPlayer-java:7.1.1'
     //视频更多ijk的编码支持
-    implementation 'com.shuyu:GSYVideoPlayer-exo2:7.1.1'
+//    implementation 'com.shuyu:GSYVideoPlayer-exo2:7.1.1'
     //根据你的需求ijk模式的so
-    implementation 'com.shuyu:gsyVideoPlayer-armv7a:7.1.1'
-    implementation 'com.shuyu:gsyVideoPlayer-arm64:7.1.1'
-    implementation 'com.shuyu:gsyVideoPlayer-x86:7.1.1'
+//    implementation 'com.shuyu:gsyVideoPlayer-armv7a:7.1.1'
+//    implementation 'com.shuyu:gsyVideoPlayer-arm64:7.1.1'
+//    implementation 'com.shuyu:gsyVideoPlayer-x86:7.1.1'
     //完整版引入
 //    implementation 'com.shuyu:gsyVideoPlayer-java:6.0.3'
     //更多ijk的编码支持

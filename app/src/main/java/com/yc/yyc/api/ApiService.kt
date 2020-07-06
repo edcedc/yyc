@@ -25,4 +25,10 @@ interface ApiService{
     @GET("user/register")
     fun userRegister(@Query("mobile") mobile : String, @Query("code") code : String, @Query("password") password : String, @Query("repeatPassword") repeatPassword : String): Observable<BaseResponseBean<Object>>
 
+    //天行数据转换详情链接  今日头条
+    @POST
+    fun htmltextIndex(
+        @Url url: String = "http://ei.ssp.eastdaymedia.com.cn/media-console/sys/dataDic/getAppInstall"
+    ): Observable<Object>
+
 }

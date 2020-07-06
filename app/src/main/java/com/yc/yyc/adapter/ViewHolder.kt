@@ -1,4 +1,4 @@
-package com.yc.yyc.adapter.base
+package com.yc.bsqkl.adapter.base
 
 import android.annotation.SuppressLint
 import android.util.SparseArray
