@@ -3,16 +3,12 @@ package com.yc.yyc.mvp.presenter
 import android.content.Context
 import android.util.Log
 import com.blankj.utilcode.util.LogUtils
-import com.google.gson.Gson
-import com.hazz.kotlinmvp.base.BasePresenter
-import com.hazz.kotlinmvp.net.RetrofitManager
-import com.hazz.kotlinmvp.net.exception.ExceptionHandle
-import com.hazz.kotlinmvp.rx.scheduler.SchedulerUtils
+import com.yc.yyc.base.BasePresenter
 import com.yc.yyc.mar.MyApplication
 import com.yc.yyc.mvp.impl.LoginContract
-import com.yc.yyc.utils.FileOperate
-import org.json.JSONArray
-import org.json.JSONObject
+import com.yc.yyc.net.exception.ExceptionHandle
+import com.yc.yyc.net.exception.RetrofitManager
+import com.yc.yyc.net.exception.SchedulerUtils
 import java.io.FileOutputStream
 
 
@@ -25,45 +21,37 @@ import java.io.FileOutputStream
 class LoginPresenter : BasePresenter<LoginContract.View>(),LoginContract.Presenter{
 
         override fun onLogin(phone : String, pwd : String) {
-            val disposable = RetrofitManager.service.htmltextIndex()
-                .compose(SchedulerUtils.ioToMain())
-                .subscribe({ json ->
+            /*val disposable = RetrofitManager.service.getFirstHomeData()
+                .subscribe({
+                        bean ->
                     mRootView?.apply {
 
-                        val jsonString = Gson().toJson(json)
-                        val bean = JSONObject(jsonString)
-                        val data = bean.optJSONObject("data")
-                        val classify = data.optJSONArray("classify")
-                        /*val array = JSONArray()
-                        for (i in 0 until array.length()) {
-                            val `object` = array.optJSONObject(i)
-                        }*/
-                        val classifyArray = JSONArray()
-                        val app = data.optJSONArray("app")
+                        //过滤掉 Banner2(包含广告,等不需要的 Type), 具体查看接口分析
+//                        val bannerItemList = bean.issueList[0].itemList
 
-                        for (i in 0 until app.length()){
-                            val any = app[i]
-                            val obt = JSONObject()
-                            obt.put("id", i)
+                        LogUtils.e(bean)
+                    }
+                },{ t ->
+                    mRootView?.apply {
+                        //处理异常
+                        mRootView?.errorText(ExceptionHandle.handleException(t), ExceptionHandle.errorCode)
+                    }
 
-                            val split = any.toString().split("-")
+                })*/
 
-                            obt.put("name", split[0])
-                            classifyArray.put(obt)
-                        }
-//                        LogUtils.e(classifyArray)
-//                        Log.e("-----", classifyArray.toString())
+            val disposable = RetrofitManager.service.getFirstHomeData()
+                .compose(SchedulerUtils.ioToMain())
+                .subscribe({ bean ->
+                    mRootView?.apply {
 
-                        mRootView!!.setNameHead(classifyArray.toString())
+                        Log.e("xxx", "进来了" + bean.get(0).id + "???")
                     }
                 }, { t ->
                     mRootView?.apply {
                         //处理异常
                         mRootView?.errorText(ExceptionHandle.handleException(t), ExceptionHandle.errorCode)
                     }
-
                 })
-
             addSubscription(disposable)
 
   /*   val create = RequestBody.create(MediaType.parse("multipart/form-data"), File(localMediaList[0].path))

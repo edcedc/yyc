@@ -1,7 +1,7 @@
 package com.yc.yyc.mvp.impl
 
-import com.hazz.kotlinmvp.base.IBaseListView
-import com.hazz.kotlinmvp.base.IListPresenter
+import com.yc.yyc.base.IBaseListView
+import com.yc.yyc.base.IListPresenter
 import com.yc.yyc.bean.DataBean
 
 /**

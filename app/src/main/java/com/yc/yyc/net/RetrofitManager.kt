@@ -1,4 +1,4 @@
-package com.hazz.kotlinmvp.net
+package com.yc.yyc.net.exception
 
 import android.util.Log
 import com.hazz.kotlinmvp.api.ApiService
@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
+import org.json.JSONObject
 
 /**
  * Created by xuhao on 2017/11/16.
@@ -24,13 +25,11 @@ import com.franmontiel.persistentcookiejar.PersistentCookieJar
 
 object RetrofitManager {
 
-    val service: ApiService by lazy(LazyThreadSafetyMode.SYNCHRONIZED) {
+    val service: ApiService by lazy (LazyThreadSafetyMode.SYNCHRONIZED){
         getRetrofit().create(ApiService::class.java)
     }
 
-    private var token: String by Preference("token", "yyc")
-
-    private var MODE_PRIVATE : Int = 1;
+    private var token:String by Preference("token","")
 
     /**
      * 设置公共参数
@@ -42,6 +41,7 @@ object RetrofitManager {
             val modifiedUrl = originalRequest.url().newBuilder()
                 // Provide your custom parameter here
 //                    .addQueryParameter("udid", "d2807c895f0348a180148c9dfa6f2feeac0781b5")
+//                    .addQueryParameter("deviceModel", AppUtils.getMobileModel())
                 .build()
             request = originalRequest.newBuilder().url(modifiedUrl).build()
             chain.proceed(request)
@@ -56,7 +56,7 @@ object RetrofitManager {
             val originalRequest = chain.request()
             val requestBuilder = originalRequest.newBuilder()
                 // Provide your custom header here
-                .addHeader("token", token)
+                .header("token", token)
                 .method(originalRequest.method(), originalRequest.body())
             val request = requestBuilder.build()
             chain.proceed(request)
@@ -119,13 +119,12 @@ object RetrofitManager {
 
         //设置 请求的缓存的大小跟位置
         val cacheFile = File(MyApplication.mContext.cacheDir, "cache")
-        val cache = Cache(cacheFile, 1024 * 1024 * 100) //50Mb 缓存的大小
+        val cache = Cache(cacheFile, 1024 * 1024 * 50) //50Mb 缓存的大小
 
         return OkHttpClient.Builder()
-            .cookieJar(PersistentCookieJar(SetCookieCache(), SharedPrefsCookiePersistor(MyApplication.mContext)))
             .addInterceptor(addQueryParameterInterceptor())  //参数添加
             .addInterceptor(addHeaderInterceptor()) // token过滤
-//            .addInterceptor(addCacheInterceptor()) //设置缓存
+//              .addInterceptor(addCacheInterceptor())
             .addInterceptor(httpLoggingInterceptor) //日志,所有的请求响应度看到
             .cache(cache)  //添加缓存
             .connectTimeout(60L, TimeUnit.SECONDS)

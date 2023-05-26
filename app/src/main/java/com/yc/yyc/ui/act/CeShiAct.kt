@@ -22,6 +22,7 @@ class CeShiAct : BaseActivity(), LoginContract.View{
     override fun getLayoutId(): Int = R.layout.b_title_recycler
 
     override fun initView() {
+        setTitle1("ggggg")
         mPresenter.init(this)
 
         mPresenter.onLogin("", "")

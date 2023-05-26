@@ -10,10 +10,8 @@ import android.os.Handler
 import android.os.Message
 import android.text.TextUtils
 import com.blankj.utilcode.util.ActivityUtils
-import com.blankj.utilcode.util.StringUtils
 import com.yanzhenjie.permission.AndPermission
-import com.yanzhenjie.permission.Permission
-import com.yc.yyc.MainActivity
+import com.yanzhenjie.permission.runtime.Permission
 import com.yc.yyc.R
 import com.yc.yyc.base.BaseActivity
 import com.yc.yyc.controller.UIHelper

@@ -33,7 +33,7 @@
             android:largeHeap="true"
             android:theme="@style/AppTheme">
         <activity
-                android:name="com.yc.yyc.ui.act.SplashAct"
+                android:name="com.yc.yyc.ui.act.LoginAct"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:theme="@style/AppTheme.customeTheme"
                 android:screenOrientation="portrait"

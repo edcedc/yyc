@@ -24,7 +24,7 @@ import com.blankj.utilcode.util.StringUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.classic.common.MultipleStatusView
 import com.gyf.immersionbar.ImmersionBar
-import com.scwang.smartrefresh.layout.SmartRefreshLayout
+import com.scwang.smart.refresh.layout.SmartRefreshLayout
 import com.yc.yyc.R
 import me.yokeyword.fragmentation_swipeback.SwipeBackFragment
 

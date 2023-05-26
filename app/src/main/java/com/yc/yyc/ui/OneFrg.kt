@@ -28,7 +28,7 @@ class OneFrg: BaseFragment(), OneContract.View{
         mPresenter.init(this)
         bt_play.setOnClickListener {
 //            UIHelper.startVideoAct("https://memashejiao.oss-cn-shenzhen.aliyuncs.com/4dea6b53fe7c784f2049542c6d151869.mp4", "https://memashejiao.oss-cn-shenzhen.aliyuncs.com/4dea6b53fe7c784f2049542c6d151869.mp4")
-            UIHelper.startHtmlAct(2, "https://www.chaokukj.cn/label/front.html")
+            UIHelper.startHtmlAct(2, "http://47.243.120.137/StandardAMS_AMSWebService_DBSchenker/MobileWebService.asmx/assetsDetail?userid=CDA015922BC44391AA00C9AF8C2DF768&companyid=dbs&assetno=&lastcalldate=")
         }
         btn_commit.setOnClickListener { mPresenter.onRequest(1) }
     }

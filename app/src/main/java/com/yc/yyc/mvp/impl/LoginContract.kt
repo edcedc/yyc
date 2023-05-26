@@ -1,7 +1,8 @@
 package com.yc.yyc.mvp.impl
 
-import com.hazz.kotlinmvp.base.IBaseView
-import com.hazz.kotlinmvp.base.IPresenter
+import com.yc.yyc.base.IBaseView
+import com.yc.yyc.base.IPresenter
+
 
 /**
  * Created by Android Studio.
@@ -11,7 +12,7 @@ import com.hazz.kotlinmvp.base.IPresenter
  */
 interface LoginContract{
 
-    interface View : IBaseView{
+    interface View : IBaseView {
 
         fun setNameHead(state_name_head: String)
         fun setError()

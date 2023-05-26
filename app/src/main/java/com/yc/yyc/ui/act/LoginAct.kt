@@ -2,9 +2,9 @@ package com.yc.yyc.ui.act
 
 import android.content.Intent
 import android.os.Bundle
-import com.yc.mema.event.CameraInEvent
 import com.yc.yyc.R
 import com.yc.yyc.base.BaseActivity
+import com.yc.yyc.event.CameraInEvent
 import com.yc.yyc.ui.LoginFrg
 import org.greenrobot.eventbus.EventBus
 

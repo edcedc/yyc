@@ -1,4 +1,4 @@
-package com.hazz.kotlinmvp.view.recyclerview.adapter
+package com.yc.yyc.adapter
 
 /**
  *

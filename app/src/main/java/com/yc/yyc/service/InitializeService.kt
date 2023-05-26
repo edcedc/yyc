@@ -93,12 +93,12 @@ class InitializeService : IntentService("InitializeService") {
                 //系统会重绘当前的页面, 经测试在某些机型, 某些情况下系统不会重绘当前页面, ScreenUtils.getScreenSize(activity) 的参数一定要不要传 Application!!!
                 //                        AutoSizeConfig.getInstance().setScreenWidth(ScreenUtils.getScreenSize(activity)[0]);
                 //                        AutoSizeConfig.getInstance().setScreenHeight(ScreenUtils.getScreenSize(activity)[1]);
-                LogUtils.e(String.format(Locale.ENGLISH, "%s onAdaptBefore!", target.javaClass.name))
+//                LogUtils.e(String.format(Locale.ENGLISH, "%s onAdaptBefore!", target.javaClass.name))
 
             }
 
             override fun onAdaptAfter(target: Any, activity: Activity) {
-                LogUtils.e(String.format(Locale.ENGLISH,"%s onAdaptAfter!",target.javaClass.name))
+//                LogUtils.e(String.format(Locale.ENGLISH,"%s onAdaptAfter!",target.javaClass.name))
             }
         }
         //是否打印 AutoSize 的内部日志, 默认为 true, 如果您不想 AutoSize 打印日志, 则请设置为 false

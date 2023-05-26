@@ -1,4 +1,4 @@
-package com.hazz.kotlinmvp.view.recyclerview
+package com.yc.yyc.adapter
 
 /**
  * Created by xuhao on 2017/11/22.
