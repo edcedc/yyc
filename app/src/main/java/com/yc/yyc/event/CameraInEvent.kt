@@ -1,4 +1,4 @@
-package com.yc.mema.event
+package com.yc.yyc.event
 
 /**
  * 作者：yc on 2018/7/25.

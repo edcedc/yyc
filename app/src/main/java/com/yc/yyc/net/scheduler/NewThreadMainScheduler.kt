@@ -1,4 +1,4 @@
-package com.hazz.kotlinmvp.rx.scheduler
+package com.yc.yyc.net.exception
 
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

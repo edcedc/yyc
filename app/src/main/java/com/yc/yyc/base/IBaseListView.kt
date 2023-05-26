@@ -1,4 +1,4 @@
-package com.hazz.kotlinmvp.base
+package com.yc.yyc.base
 
 /**
  * @author Jake.Ho

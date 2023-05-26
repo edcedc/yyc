@@ -11,14 +11,6 @@ def releaseTime() {
 }
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'ye'
-            keyPassword '123456'
-            storeFile file('../yyc.jks')
-            storePassword '123456'
-        }
-    }
 
     compileSdkVersion rootProject.ext.android.compileSdkVersion
 
@@ -34,7 +26,7 @@ android {
                 includeCompileClasspath true
             }
         }
-        signingConfig signingConfigs.config
+//        signingConfig signingConfigs.config
         // 实现毛玻璃那种透明的效果需要添加的库
         renderscriptTargetApi 19
         renderscriptSupportModeEnabled true    // Enable RS support
@@ -49,14 +41,14 @@ android {
         debug {
             minifyEnabled false
             debuggable true
-            signingConfig signingConfigs.config
+//            signingConfig signingConfigs.config
         }
         release {
             // 混淆
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             debuggable false
-            signingConfig signingConfigs.config
+//            signingConfig signingConfigs.config
             // Zipalign优化
             zipAlignEnabled true
             // 移除无用的resource文件

@@ -7,6 +7,7 @@ import kotlin.properties.Delegates
 import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.tencent.bugly.crashreport.CrashReport
 import com.yc.yyc.R
+import java.util.logging.Logger
 
 /**
  * Created by Android Studio.
@@ -41,6 +42,8 @@ class MyApplication : Application(){
         mContext = this;
         InitializeService.start(this)
         CrashReport.initCrashReport(applicationContext, "5cd0cff6d3", true)
+
     }
+
 
 }

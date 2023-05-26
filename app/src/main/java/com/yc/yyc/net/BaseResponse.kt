@@ -1,4 +1,4 @@
-package com.hazz.kotlinmvp.net
+package com.yc.yyc.net.exception
 
 /**
  * Created by xuhao on 2017/11/16.

@@ -1,4 +1,4 @@
-package com.hazz.kotlinmvp.rx.scheduler
+package com.yc.yyc.net.exception
 
 import io.reactivex.*
 import org.reactivestreams.Publisher

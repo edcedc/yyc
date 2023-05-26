@@ -1,13 +1,7 @@
 package com.yc.yyc.mvp.presenter
 
-import android.app.Activity
-import android.content.Context
 import android.widget.Toast
-import com.hazz.kotlinmvp.base.BaseListPresenter
-import com.hazz.kotlinmvp.net.RetrofitManager
-import com.hazz.kotlinmvp.net.exception.ErrorStatus
-import com.hazz.kotlinmvp.net.exception.ExceptionHandle
-import com.hazz.kotlinmvp.rx.scheduler.SchedulerUtils
+import com.yc.yyc.base.BaseListPresenter
 import com.yc.yyc.mar.MyApplication
 import com.yc.yyc.mvp.impl.OneContract
 

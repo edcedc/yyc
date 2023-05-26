@@ -1,4 +1,4 @@
-package com.hazz.kotlinmvp.net.exception
+package com.yc.yyc.net.exception
 
 import com.blankj.utilcode.util.LogUtils
 import com.google.gson.JsonParseException

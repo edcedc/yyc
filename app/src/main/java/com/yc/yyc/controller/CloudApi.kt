@@ -14,21 +14,20 @@ class CloudApi private constructor() {
 
     companion object{
 
-//        val url =
-//            "10.0.1.141:8080"
+        val url =
+            "47.243.120.137"
+
+        val SERVLET_URL = "http://" +
+                url + "//StandardAMS_AMSWebService_DBSchenker/MobileWebService.asmx/"
+
+
+//        private val url =
+//            "baobab.kaiyanapp.com"
 //
-//        val SERVLET_URL = "http://" +
-//                url + "/forward/"
-
-//        http://jj123.nat300.top/adv_chain/api/user/update
-
-        private val url =
-            "47.100.199.115"
-
-        val SERVLET_IMG_URL = "http://" +
-                url + "/adv_chain/"
-
-        val SERVLET_URL = SERVLET_IMG_URL + "api/"
+        val SERVLET_IMG_URL = "https://" +
+                url + "/"
+//
+//        val SERVLET_URL = SERVLET_IMG_URL + "api/"
 
         private var TEST_URL = "" //测试
 

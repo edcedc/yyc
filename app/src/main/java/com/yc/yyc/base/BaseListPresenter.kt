@@ -1,6 +1,5 @@
-package com.hazz.kotlinmvp.base
+package com.yc.yyc.base
 
-import android.app.Activity
 import com.blankj.utilcode.util.ToastUtils
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable

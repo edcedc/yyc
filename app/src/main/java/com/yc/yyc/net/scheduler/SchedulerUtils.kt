@@ -1,4 +1,4 @@
-package com.hazz.kotlinmvp.rx.scheduler
+package com.yc.yyc.net.exception
 
 /**
  * Created by xuhao on 2017/11/17.

@@ -1,10 +1,6 @@
 package com.yc.yyc.mvp.presenter
 
-import com.hazz.kotlinmvp.base.BasePresenter
-import com.hazz.kotlinmvp.net.RetrofitManager
-import com.hazz.kotlinmvp.net.exception.ErrorStatus
-import com.hazz.kotlinmvp.net.exception.ExceptionHandle
-import com.hazz.kotlinmvp.rx.scheduler.SchedulerUtils
+import com.yc.yyc.base.BasePresenter
 import com.yc.yyc.mvp.impl.HtmlContract
 import com.yc.yyc.ui.act.HtmlAct
 

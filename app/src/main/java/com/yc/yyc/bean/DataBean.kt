@@ -45,4 +45,12 @@ class DataBean : Serializable {
     var userExtend: DataBean? = null
     var introduction: DataBean? = null
 
+
+    var count: String? = null
+
+
+    override fun toString(): String {
+        return "count=$count"
+    }
+
 }
