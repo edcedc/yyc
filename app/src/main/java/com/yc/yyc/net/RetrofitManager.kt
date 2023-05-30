@@ -1,7 +1,6 @@
 package com.yc.yyc.net.exception
 
 import android.util.Log
-import com.hazz.kotlinmvp.api.ApiService
 import com.yc.yyc.controller.CloudApi
 import com.yc.yyc.mar.MyApplication
 import com.yc.yyc.net.NetworkUtil
@@ -16,6 +15,7 @@ import java.util.concurrent.TimeUnit
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache
 import com.franmontiel.persistentcookiejar.PersistentCookieJar
+import com.yc.tea.api.ApiService
 import org.json.JSONObject
 
 /**

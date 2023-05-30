@@ -24,6 +24,8 @@ class CloudApi private constructor() {
         val SERVLET_IMG_URL = "https://" +
                 url + "/"
 //
+
+//
 //        val SERVLET_URL = SERVLET_IMG_URL + "api/"
 
         private var TEST_URL = "" //测试

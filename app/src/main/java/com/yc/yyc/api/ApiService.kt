@@ -1,10 +1,9 @@
-package com.hazz.kotlinmvp.api
+package com.yc.tea.api
 
 import com.yc.yyc.bean.BaseResponseBean
 import com.yc.yyc.bean.DataBean
 import io.reactivex.Observable
 import retrofit2.http.*
-import java.util.*
 
 
 /**
@@ -24,8 +23,9 @@ interface ApiService{
         @Url url: String = "assetsDetail"
     ): Observable<Object>
 
-    @GET("asin/getList")
-    fun getFirstHomeData(@Query("page") num:String?= "2", @Query("size") companyid:String? = "10"):Observable<List<DataBean>>
+    @GET("assetsList")
+    fun getFirstHomeData(@Query("userid") num:String?= "CDA015922BC44391AA00C9AF8C2DF768", @Query("companyid") companyid:String? = "dbs"
+                         , @Query("assetno") assetno:String?= "", @Query("lastcalldate") lastcalldate:String?= ""):Observable<List<DataBean>>
 
     @GET
     fun getIssueData1(@Url url: String): Observable<DataBean>
